@@ -1,0 +1,18 @@
+@media screen and (orientation: landscape) {
+  table td {
+    width: var(--td-size-win);
+    height: var(--td-size-win);
+  }
+
+  /* tags */
+
+
+  .quote{
+    font-size: 4.5vh;
+  }
+
+  .links img{
+    width: 5vh;
+    height: 5vh;
+  }
+}

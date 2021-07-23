@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+body{
+    transform: scaleZ(10rem);
+    -webkit-transform: scaleZ(10rem);
+    -moz-transform: scaleZ(10rem);
+    -ms-transform: scaleZ(10rem);
+    -o-transform: scaleZ(10rem);
+}
+
+#game-screen{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--game-body);
+    background-image: url('../assets/candy-wallpaper-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#game-screen::before{
+    content: '';
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgb(32, 32, 32);
+    opacity: .5;
+    background-color: rgba(119, 117, 117, 0.404);
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: auto;
+    z-index: 9;
+    background-color: rgba(60, 61, 60, 0.7);
+    border: 0px solid whitesmoke;
+    color: rgba(32, 32, 32 , 0);
+    cursor: pointer;
+    cursor: grab;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    backdrop-filter: blur(.1rem);
+    -webkit-backdrop-filter: blur(.1rem);
+}
+table td{
+    width:  var(--td-size);
+    height: var(--td-size);
+    text-align: center;
+    user-select: none;
+    border-color: gray;
+    color: rgba(32, 32, 32 , 0);
+    
+    /* background-image: url('https://i.postimg.cc/yx2F3Bs5/special-candy-crush-combos.png'); */
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+table td[candy= '-1']{
+    background-image: none;
+}
+
+table td[candy= '0']{
+    background-image: url(../assets/purple-candy.png);
+}
+table td[candy= '1']{
+    background-image: url(../assets/orange-candy.png);
+    background-size: 82%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+table td[candy= '2']{
+    background-image: url(../assets/blue-candy.png);
+}
+table td[candy= '3']{
+    background-image: url(../assets/yellow-candy.png);
+    background-size: 74%;
+}
+table td[candy= '4']{
+    background-image: url(../assets/red-candy.png);
+}
+
+table td[candy = '5']{
+    background-image: url(../assets/yellow-shade-candy.png);
+    background-size: 74%;
+}
+
+table td[candy = '6']{
+    background-image: url(../assets/blue-shade-candy.png);
+}
+table td[candy = '7']{
+    background-image: url(../assets/red-wraper-candy.png);
+}
+table td[candy = '8']{
+    background-image: url(../assets/color-ball-candy.png);
+}
+
+
+.quotes-container{
+    position: absolute;
+/*     top: 0; */
+    width: 100%;
+    height: 25vh;
+    display: flex;
+/*     align-items: flex-end; */
+    justify-content: center;
+}
+.quote{
+    position: absolute;
+    /*     top: 5%; */
+/*     bottom : 0; */
+    font-size: 7vw;
+    z-index: 99;
+    font-family: 'Courgette', cursive;
+    /* padding-bottom: 5rem; */
+    opacity: 0;
+    color: yellow;
+    text-shadow: 0px 0px 1.3rem rgb(243, 243, 16);
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+   /* transform: translateY(10vh);
+        -webkit-transform: translateY(10vh);
+        -moz-transform: translateY(10vh);
+        -ms-transform: translateY(10vh);
+        -o-transform: translateY(10vh); */
+}
+#tbody{
+    position: relative;
+    top: 0;
+}
+.fly{
+    animation: fly 1s ease-in-out .3s alternate;
+    -webkit-animation: fly 1s ease-in-out .3s alternate;
+}
+
+@keyframes fly{
+    0%{
+        opacity: 1;
+        transform: translateY(0vh);
+        -webkit-transform: translateY(0vh);
+        -moz-transform: translateY(0vh);
+        -ms-transform: translateY(0vh);
+        -o-transform: translateY(0vh);
+}
+    100%{
+        opacity: 0;
+        transform: translateY(-3.8rem);
+        -webkit-transform: translateY(-3.8rem);
+        -moz-transform: translateY(-3.8rem);
+        -ms-transform: translateY(-3.8rem);
+        -o-transform: translateY(-3.8rem);
+}
+}
+
+
+.change-bg{
+    background-image: url('../assets/candy-wallpaper-1.jpg')!important;
+}
+
+
+
+.contain{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+.input-handler-box{
+    flex-direction: column-reverse;
+    background-color: rgba(240, 255, 240, 0.459);
+    width: 90%;
+    max-width: 650px;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    padding: 1rem;
+    height: 80%;
+    backdrop-filter: blur(.1rem);
+    -webkit-backdrop-filter: blur(.1rem);
+}
+.input{
+    width: 100%;
+    padding: 1rem 0;
+}
+label{
+    margin-bottom: .5rem;
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.select{
+    float: right;
+    padding-right: 4rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+input{
+    width: 80%;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+button{
+    padding: .5rem 1.3rem;
+    border-radius: .8rem;
+    -webkit-border-radius: .8rem;
+    -moz-border-radius: .8rem;
+    -ms-border-radius: .8rem;
+    -o-border-radius: .8rem;
+    background-color: rgb(141, 0, 141);
+    color: whitesmoke;
+    border: 2px solid rgb(119, 5, 119);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(163, 6, 163);
+    border-color: rgb(145, 8, 145);
+}
+
+
+.links{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    float: left;
+    padding: 0 1rem;
+}
+.links a{
+    float: right;
+    display: block;
+}
+.links img{
+    width: 7vw;
+    height: 7vw;
+    cursor: pointer;
+    margin: 0 .5rem .2rem .5rem;
+}
+
+
+
+
+
+
+
+
